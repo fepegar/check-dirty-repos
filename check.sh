@@ -1,5 +1,11 @@
 for repo in `ls`
 do
+    # Check that $repo is a dir
+    if [ ! -d "$repo" ]
+    then
+        continue
+    fi
+
     cd $repo
     if [ -d ".git" ]
     then
